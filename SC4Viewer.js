@@ -31,8 +31,8 @@ function preload() {
   img[4] = loadImage("images/Rotation_4.jpg");
 
 i = 1;
-x = displayWidth/2;
-y = displayHeight/2;
+x = 1024/2;
+y = 768/2;
 mx = 256;
 my = 256;
 Sx = 1024; 
@@ -43,7 +43,7 @@ rx = Sy/Sx;
 }
 
 function setup() {
-createCanvas(displayWidth, displayHeight);
+createCanvas(1024, 768);
 imageMode(CENTER);
 noLoop(); 
 }
@@ -54,14 +54,14 @@ function draw(){
   image(img[i],x,y,Sx,Sy);
    x = x - (10*Mx);
     y = y - (10*My);
-   line(500,320,524,320);
-line(512,308,512,332);
+//   line(500,320,524,320);
+// line(512,308,512,332);
 stroke(150);
    }else{
    image(img[i],x,y,Sx,Sy);}
-  line(500,320,524,320);
-line(512,308,512,332);
-stroke(150);
+//   line(500,320,524,320);
+// line(512,308,512,332);
+// stroke(150);
 }
 
 // KEYBOARD
@@ -189,17 +189,17 @@ function mousePressed(){
 
 // zoom
 function mouseWheel(event){
-var e = (event.delta/3);
+var e = (event.delta);
 print(event.delta);
 // zoom in
-if(e == -1){
-   s = 1-(e*0.1);
+if(e < 1){
+   s = 1+(1*0.1);
     Sx = Sx*s;
     Sy = Sy*s;
   }
 // zoom out
-  if (e == 1){
-   s = 1-(e*0.1);
+  if (e> 1){
+   s = 1-(1*0.1);
    Sx = Sx*s;
    Sy = Sy*s;
   }
