@@ -114,8 +114,8 @@ function keyPressed() {
   }
   // zoom & position reset on spacebar
   if (key == ' '){
-    x = displayWidth/2;
-    y = displayHeight/2;
+    x = 1024/2;
+    y = 768/2;
     Sx = 1024;
     Sy = 658;
     s = 1;
